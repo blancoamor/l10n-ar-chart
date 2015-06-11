@@ -26,9 +26,11 @@
               <field name="name">Plan de Cuentas</field>
               <field name="type">view</field>
               <field name="code">*</field>
-              <field name="user_type" ref="account.account_type_root"/>
-             <field name="parent_id" ref=""/>
+              <field name="user_type" ref="account.data_account_type_view"/>
+             <field name="parent_id" ref="False"/>
     </record>
+
+
     <record model="account.account.template" id="ba_activo">
               <field name="name">Activo</field>
               <field name="type">view</field>
