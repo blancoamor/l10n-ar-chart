@@ -1562,21 +1562,7 @@
 # Impuestos a las Ganancias
 # TODO. 
 
-#
-# Impuestos a las Impuesto Fond. P/Educ. Y Prom. Cooperativa
-# 
-        <record id="coop_coop_facturado" model="account.tax.template">
-            <field name="chart_template_id" ref="coop_l10nAR_chart_template"/>
-            <field name="name">Facturación Impuestos a las Impuesto Fond. P/Educ. Y Prom. Cooperativa</field>
-            <field name="description">029998:F</field>
-            <field eval="0" name="amount"/>
-            <field name="type">fixed</field>
-            <field name="base_code_id" ref="coop_tax_code_coop_facturado"/>
-            <field name="ref_base_code_id" ref="coop_tax_code_coop_facturado"/>
-            <field name="account_collected_id" ref="coop_impuestos_coop"/>
-            <field name="account_paid_id" ref="coop_impuestos_coop"/>
-            <field name="type_tax_use">sale</field>
-        </record>
+
 
     </data>
 </openerp>
