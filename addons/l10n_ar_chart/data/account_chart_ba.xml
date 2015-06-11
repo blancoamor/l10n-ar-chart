@@ -538,7 +538,7 @@
               <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_equipos_de_computación">
+    <record model="account.account.template" id="ba_equipos_de_computacion">
               <field name="name">Equipos de Computación</field>
               <field name="type">other</field>
               <field name="code">1.154</field>
@@ -629,7 +629,7 @@
               <field name="user_type" ref="account.data_account_type_view"/>
              <field name="parent_id" ref="ba_pasivo"/>
     </record>
-    <record model="account.account.template" id="ba_préstamos_bancarios">
+    <record model="account.account.template" id="ba_prestamos_bancarios">
               <field name="name">Préstamos bancarios</field>
               <field name="type">payable</field>
               <field name="code">2.112.01</field>
@@ -762,7 +762,7 @@
               <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_pasivo"/>
     </record>
-    <record model="account.account.template" id="ba_previsión_para_indemniz_p_despidos">
+    <record model="account.account.template" id="ba_prevision_para_indemniz_p_despidos">
               <field name="name">Previsión para indemniz p despidos</field>
               <field name="type">payable</field>
               <field name="code">2.221</field>
@@ -825,7 +825,7 @@
               <field name="user_type" ref="account.data_account_type_view"/>
              <field name="parent_id" ref="ba_a_root"/>
     </record>
-    <record model="account.account.template" id="ba_ventas_de_mercadería">
+    <record model="account.account.template" id="ba_ventas_de_mercaderia">
               <field name="name">Ventas de mercadería</field>
               <field name="type">other</field>
               <field name="code">4.101</field>
@@ -881,19 +881,19 @@
               <field name="user_type" ref="account.data_account_type_view"/>
              <field name="parent_id" ref="ba_a_root"/>
     </record>
-    <record model="account.account.template" id="ba_costo_de_mercadería">
-              <field name="name">Costo de mercadería</field>
+    <record model="account.account.template" id="ba_costo_de_mercaderia">
+              <field name="name">Costo de mercadería</field>1
               <field name="type">view</field>
               <field name="code">5.110</field>
               <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_egresos"/>
     </record>
-    <record model="account.account.template" id="ba_costo_de_mercadería_vendida">
+    <record model="account.account.template" id="ba_costo_de_mercaderia_vendida">
               <field name="name">Costo de mercadería vendida</field>
               <field name="type">other</field>
               <field name="code">5.110.01</field>
               <field name="user_type" ref="account.data_account_type_expense"/>
-             <field name="parent_id" ref="ba_costo_de_mercadería"/>
+             <field name="parent_id" ref="ba_costo_de_mercaderia"/>
     </record>
     <record model="account.account.template" id="ba_gastos_comerciales">
               <field name="name">Gastos Comerciales</field>
@@ -923,7 +923,7 @@
               <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_prestauración_muebles">
+    <record model="account.account.template" id="ba_gastos_prestauracion_muebles">
               <field name="name">Gastos p/restauración Muebles</field>
               <field name="type">other</field>
               <field name="code">5.130.04</field>
@@ -1505,7 +1505,7 @@
             <field name="property_account_receivable" ref="ba_deudores"/>
             <field name="property_account_payable" ref="ba_proveedores"/>
             <field name="property_account_expense_categ" ref="ba_gastos_varios"/>
-            <field name="property_account_income_categ" ref="ba_ventas_de_mercadería"/>
+            <field name="property_account_income_categ" ref="ba_ventas_de_mercaderia"/>
         </record>
 
 #
