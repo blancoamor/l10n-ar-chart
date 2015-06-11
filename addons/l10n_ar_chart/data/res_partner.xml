@@ -23,8 +23,8 @@
             <field name="is_company" eval="True"/>
             <field name="customer" eval="True"/>
             <field name="supplier" eval="True"/>
-            <field name="property_account_receivable" ref="ri_iva_retencion"/>
-            <field name="property_account_payable" ref="ri_iva_a_pagar"/>
+            <field name="property_account_receivable" ref="ba_saldo_a_favor_iva"/>
+            <field name="property_account_payable" ref="ba_iva"/>
         </record>
     </data>
 </openerp>

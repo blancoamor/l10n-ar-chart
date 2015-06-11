@@ -610,7 +610,7 @@
               <field name="type">payable</field>
               <field name="code">2.111.01</field>
               <field name="user_type" ref="account.data_account_type_payable"/>
-             <field name="parent_id" ref="ba_proveedores"/>
+             <field name="parent_id" ref="ba_pasivo"/>
     </record>
     <record model="account.account.template" id="ba_cheques_emitidos">
               <field name="name">Cheques emitidos</field>
@@ -777,42 +777,42 @@
               <field name="name">CAPITAL</field>
               <field name="type">other</field>
               <field name="code">3.100</field>
-              <field name="user_type" ref="account.data_account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_patrimonio_neto"/>
     </record>
     <record model="account.account.template" id="ba_reservas">
               <field name="name">RESERVAS</field>
               <field name="type">other</field>
               <field name="code">3.200</field>
-              <field name="user_type" ref="account.data_account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_patrimonio_neto"/>
     </record>
     <record model="account.account.template" id="ba_reserva_legal">
               <field name="name">Reserva Legal</field>
               <field name="type">other</field>
               <field name="code">3.210</field>
-              <field name="user_type" ref="account.data_account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_reservas"/>
     </record>
     <record model="account.account.template" id="ba_resultados">
               <field name="name">RESULTADOS</field>
               <field name="type">other</field>
               <field name="code">3.300</field>
-              <field name="user_type" ref="account.data_account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_patrimonio_neto"/>
     </record>
     <record model="account.account.template" id="ba_resultados_acumulados">
               <field name="name">Resultados acumulados</field>
               <field name="type">other</field>
               <field name="code">3.310</field>
-              <field name="user_type" ref="account.data_account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_resultados"/>
     </record>
     <record model="account.account.template" id="ba_resultados_del_ejercicio">
               <field name="name">Resultados del ejercicio</field>
               <field name="type">other</field>
               <field name="code">3.320</field>
-              <field name="user_type" ref="account.data_account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_patrimonio_neto"/>
     </record>
     <record model="account.account.template" id="ba_ingresos">
@@ -879,7 +879,7 @@
              <field name="parent_id" ref="ba_a_root"/>
     </record>
     <record model="account.account.template" id="ba_costo_de_mercaderia">
-              <field name="name">Costo de mercadería</field>1
+              <field name="name">Costo de mercadería</field>
               <field name="type">view</field>
               <field name="code">5.110</field>
               <field name="user_type" ref="account.data_account_type_expense"/>
@@ -1128,7 +1128,7 @@
               <field name="type">other</field>
               <field name="code">5.140.23</field>
               <field name="user_type" ref="account.data_account_type_expense"/>
-             <field name="parent_id" ref=" Bazar"/>
+             <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
     <record model="account.account.template" id="ba_bsde_uso_menores">
               <field name="name">Bs.de Uso menores</field>
@@ -1347,7 +1347,7 @@
               <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_financieros"/>
     </record>
-    <record model="account.account.template" id="ba_dtos_x_vtas_de_campaña">
+    <record model="account.account.template" id="ba_dtos_x_vtas_de_campana">
               <field name="name">Dtos x Vtas de Campaña</field>
               <field name="type">other</field>
               <field name="code">5.150.08</field>
@@ -1595,31 +1595,19 @@
 
 # convenio multilateral.
 
-        <record id="ba_tax_iibb_ba_percepcion" model="account.tax.template">
+<!--         <record id="ba_tax_iibb_ba_percepcion" model="account.tax.template">
             <field name="chart_template_id" ref="ba_l10nAR_chart_template"/>
             <field name="name">Percepción de Ingresos Brutos convenio multilateral</field>
             <field name="description">022429:P</field>
             <field eval="0.02" name="amount"/>
             <field name="type">percent</field>
-            <field name="tax_code_id" ref="ba_tax_code_iibb_ba_percepcion"/>
-            <field name="ref_tax_code_id" ref="ba_tax_code_iibb_ba_percepcion"/>
+            <field name="tax_code_id" ref="ba_ingresos_brutos_a_pagar"/>
+            <field name="ref_tax_code_id" ref="ba_ingresos_brutos_a_pagar"/>
             <field name="account_collected_id" ref="ba_ret_y_percepciones_ingbrutos"/>
             <field name="account_paid_id" ref="ba_ret_y_percepciones_ingbrutos"/>
             <field name="type_tax_use">purchase</field>
         </record>
 
-        <record id="ba_tax_iibb_ba_retencion" model="account.tax.template">
-            <field name="chart_template_id" ref="ba_l10nAR_chart_template"/>
-            <field name="name">Retención de Ingresos Brutos Prov. Buenos Aires</field>
-            <field name="description">022429:R</field>
-            <field eval="0.02" name="amount"/>
-            <field name="type">percent</field>
-            <field name="tax_code_id" ref="ba_tax_code_iibb_ba_retencion"/>
-            <field name="ref_tax_code_id" ref="ba_tax_code_iibb_ba_retencion"/>
-            <field name="account_collected_id" ref="ba_ret_y_percepciones_ingbrutos"/>
-            <field name="account_paid_id" ref="ba_ret_y_percepciones_ingbrutos"/>
-            <field name="type_tax_use">purchase</field>
-        </record>
 
         <record id="ba_tax_iibb_ba_facturado" model="account.tax.template">
             <field name="chart_template_id" ref="ba_l10nAR_chart_template"/>
@@ -1627,14 +1615,14 @@
             <field name="description">022429:F</field>
             <field eval="0" name="amount"/>
             <field name="type">fixed</field>
-            <field name="base_code_id" ref="ba_tax_code_iibb_ba_facturado"/>
-            <field name="ref_base_code_id" ref="ba_tax_code_iibb_ba_facturado"/>
+            <field name="base_code_id" ref="ba_ingresos_brutos_a_pagar"/>
+            <field name="ref_base_code_id" ref="ba_ingresos_brutos_a_pagar"/>
             <field name="account_collected_id" ref="ba_ret_y_percepciones_ingbrutos"/>
             <field name="account_paid_id" ref="ba_ret_y_percepciones_ingbrutos"/>
             <field name="type_tax_use">sale</field>
         </record>
 
-
+ -->
 
     </data>
 </openerp>
