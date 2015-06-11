@@ -475,7 +475,7 @@
               <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_activo"/>
     </record>
-    <record model="account.account.template" id="ba_mercadería">
+    <record model="account.account.template" id="ba_mercaderia">
               <field name="name">Mercadería</field>
               <field name="type">receivable</field>
               <field name="code">1.141</field>
