@@ -1389,7 +1389,7 @@
 #
         <record id="ba_tax_code_chart_root" model="account.tax.code.template">
             <field name="name">Plan de Impuestos de Argentina para Blancoamor</field>
-            <field name="info">Raíz de la estructura de impuestos de la Argentina para Cooperativas. Incluye Ingresos Brutos Convenio multilateral neuquen y rio negro</field>
+            <field name="info">Raíz de la estructura de impuestos de la ba . Incluye Ingresos Brutos Convenio multilateral neuquen y rio negro</field>
 	    <field name="code">BA</field>
             <field name="parent_id" eval="False"/>
         </record>
