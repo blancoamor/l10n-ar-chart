@@ -22,1356 +22,1359 @@
 #
 # Chart of Accounts
 #
-    <record model="account.account.template" id="ba_a_root">
-              <field name="name">Plan de Cuentas</field>
+    <record model="account.data_account.template" id="ba_a_root">
               <field name="type">view</field>
-              <field name="code">*</field>
+              <field name="code">0</field>
               <field name="user_type" ref="account.data_account_type_view"/>
-             <field name="parent_id" ref="False"/>
+              <field name="name">Plan de Cuentas</field>
+             <field name="parent_id" eval="False"/>
     </record>
 
 
-    <record model="account.account.template" id="ba_activo">
+    <record model="account.data_account.template" id="ba_activo">
               <field name="name">Activo</field>
               <field name="type">view</field>
               <field name="code">1</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_view"/>
              <field name="parent_id" ref="ba_a_root"/>
     </record>
-    <record model="account.account.template" id="ba_disponibilidades">
+
+
+
+    <record model="account.data_account.template" id="ba_disponibilidades">
               <field name="name">Disponibilidades</field>
               <field name="type">other</field>
               <field name="code">1.110</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_activo"/>
     </record>
-    <record model="account.account.template" id="ba_caja">
+    <record model="account.data_account.template" id="ba_caja">
               <field name="name">Caja</field>
               <field name="type">view</field>
               <field name="code">1.111</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_activo"/>
     </record>
-    <record model="account.account.template" id="ba_efectivo">
+    <record model="account.data_account.template" id="ba_efectivo">
               <field name="name">Efectivo</field>
               <field name="type">other</field>
               <field name="code">1.111.01</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_caja"/>
     </record>
-    <record model="account.account.template" id="ba_fondo_fijo">
+    <record model="account.data_account.template" id="ba_fondo_fijo">
               <field name="name">Fondo fijo</field>
               <field name="type">other</field>
               <field name="code">1.111.02</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_caja"/>
     </record>
-    <record model="account.account.template" id="ba_valores_a_depositar">
+    <record model="account.data_account.template" id="ba_valores_a_depositar">
               <field name="name">Valores a depositar</field>
               <field name="type">other</field>
               <field name="code">1.111.03</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_fondo_fijo"/>
     </record>
-    <record model="account.account.template" id="ba_moneda_extranjera">
+    <record model="account.data_account.template" id="ba_moneda_extranjera">
               <field name="name">Moneda extranjera</field>
               <field name="type">other</field>
               <field name="code">1.111.04</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_fondo_fijo"/>
     </record>
-    <record model="account.account.template" id="ba_bancos">
+    <record model="account.data_account.template" id="ba_bancos">
               <field name="name">Bancos</field>
               <field name="type">other</field>
               <field name="code">1.112</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_caja"/>
     </record>
-    <record model="account.account.template" id="ba_cta_7300">
+    <record model="account.data_account.template" id="ba_cta_7300">
               <field name="name">Cta. 7300</field>
               <field name="type">other</field>
               <field name="code">1.112.01</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_bancos"/>
     </record>
-    <record model="account.account.template" id="ba_ca_41359_bpcia_del_neuquen">
+    <record model="account.data_account.template" id="ba_ca_41359_bpcia_del_neuquen">
               <field name="name">C.A. 41359 B.Pcia. Del Neuquèn</field>
               <field name="type">other</field>
               <field name="code">1.112.02</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_bancos"/>
     </record>
-    <record model="account.account.template" id="ba_ca_093">
+    <record model="account.data_account.template" id="ba_ca_093">
               <field name="name">C.A. 093</field>
               <field name="type">other</field>
               <field name="code">1.112.03</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_ca_41359_bpcia_del_neuquen"/>
     </record>
-    <record model="account.account.template" id="ba_cta3768524755_banco_nacion">
+    <record model="account.data_account.template" id="ba_cta3768524755_banco_nacion">
               <field name="name">Cta.3768524755 Banco Nacion</field>
               <field name="type">other</field>
               <field name="code">1.112.04</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_ca_41359_bpcia_del_neuquen"/>
     </record>
-    <record model="account.account.template" id="ba_ca_110691">
+    <record model="account.data_account.template" id="ba_ca_110691">
               <field name="name">C.A. 110691</field>
               <field name="type">other</field>
               <field name="code">1.112.05</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_cta3768524755_banco_nacion"/>
     </record>
-    <record model="account.account.template" id="ba_40003433_ca_banco_galicia">
+    <record model="account.data_account.template" id="ba_40003433_ca_banco_galicia">
               <field name="name">4000343/3 C.A. Banco Galicia</field>
               <field name="type">other</field>
               <field name="code">1.112.06</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_cta3768524755_banco_nacion"/>
     </record>
-    <record model="account.account.template" id="ba_ca_5764713038_citibank">
+    <record model="account.data_account.template" id="ba_ca_5764713038_citibank">
               <field name="name">C.A. 5764713038 Citibank</field>
               <field name="type">other</field>
               <field name="code">1.112.07</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_40003433_ca_banco_galicia"/>
     </record>
-    <record model="account.account.template" id="ba_ctacte_banco_de_la_nacion_argentina">
+    <record model="account.data_account.template" id="ba_ctacte_banco_de_la_nacion_argentina">
               <field name="name">Cta.Cte Banco de la Nacion Argentina</field>
               <field name="type">other</field>
               <field name="code">1.112.08</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_40003433_ca_banco_galicia"/>
     </record>
-    <record model="account.account.template" id="ba_fondos_fijos">
+    <record model="account.data_account.template" id="ba_fondos_fijos">
               <field name="name">Fondos Fijos</field>
               <field name="type">view</field>
               <field name="code">1.113</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_caja"/>
     </record>
-    <record model="account.account.template" id="ba_ff_federico_kreplak">
+    <record model="account.data_account.template" id="ba_ff_federico_kreplak">
               <field name="name">FF Federico Kreplak</field>
               <field name="type">other</field>
               <field name="code">1.113.01</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_fondos_fijos"/>
     </record>
-    <record model="account.account.template" id="ba_ff_carlos_kreplak">
+    <record model="account.data_account.template" id="ba_ff_carlos_kreplak">
               <field name="name">FF Carlos Kreplak</field>
               <field name="type">other</field>
               <field name="code">1.113.02</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_fondos_fijos"/>
     </record>
-    <record model="account.account.template" id="ba_creditos">
+    <record model="account.data_account.template" id="ba_creditos">
               <field name="name">Creditos</field>
               <field name="type">view</field>
               <field name="code">1.130</field>
-              <field name="user_type" ref="account.account_type_cash"/>
+              <field name="user_type" ref="account.data_account_type_cash"/>
              <field name="parent_id" ref="ba_activo"/>
     </record>
-    <record model="account.account.template" id="ba_deudores_por_ventas">
+    <record model="account.data_account.template" id="ba_deudores_por_ventas">
               <field name="name">Deudores por ventas</field>
               <field name="type">view</field>
               <field name="code">1.131</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_disponibilidades"/>
     </record>
-    <record model="account.account.template" id="ba_deudores">
+    <record model="account.data_account.template" id="ba_deudores">
               <field name="name">Deudores</field>
               <field name="type">receivable</field>
               <field name="code">1.131.01</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_cheques_de_terceros">
+    <record model="account.data_account.template" id="ba_cheques_de_terceros">
               <field name="name">Cheques de Terceros</field>
               <field name="type">receivable</field>
               <field name="code">1.131.02</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_deudores_morosos">
+    <record model="account.data_account.template" id="ba_deudores_morosos">
               <field name="name">Deudores morosos</field>
               <field name="type">receivable</field>
               <field name="code">1.131.03</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_naranja">
+    <record model="account.data_account.template" id="ba_tarjeta_naranja">
               <field name="name">Tarjeta Naranja</field>
               <field name="type">receivable</field>
               <field name="code">1.131.04</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_nevada">
+    <record model="account.data_account.template" id="ba_tarjeta_nevada">
               <field name="name">Tarjeta Nevada</field>
               <field name="type">receivable</field>
               <field name="code">1.131.05</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_cabal">
+    <record model="account.data_account.template" id="ba_tarjeta_cabal">
               <field name="name">Tarjeta Cabal</field>
               <field name="type">receivable</field>
               <field name="code">1.131.06</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_visa">
+    <record model="account.data_account.template" id="ba_tarjeta_visa">
               <field name="name">Tarjeta Visa</field>
               <field name="type">receivable</field>
               <field name="code">1.131.07</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_carta_automatica">
+    <record model="account.data_account.template" id="ba_carta_automatica">
               <field name="name">Carta Automatica</field>
               <field name="type">receivable</field>
               <field name="code">1.131.08</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_nativa">
+    <record model="account.data_account.template" id="ba_tarjeta_nativa">
               <field name="name">Tarjeta Nativa</field>
               <field name="type">receivable</field>
               <field name="code">1.131.09</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_mastercard">
+    <record model="account.data_account.template" id="ba_tarjeta_mastercard">
               <field name="name">Tarjeta Mastercard</field>
               <field name="type">receivable</field>
               <field name="code">1.131.10</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_actual">
+    <record model="account.data_account.template" id="ba_tarjeta_actual">
               <field name="name">Tarjeta Actual</field>
               <field name="type">receivable</field>
               <field name="code">1.131.11</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_crediguia">
+    <record model="account.data_account.template" id="ba_tarjeta_crediguia">
               <field name="name">Tarjeta Crediguia</field>
               <field name="type">receivable</field>
               <field name="code">1.131.12</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_maestro">
+    <record model="account.data_account.template" id="ba_tarjeta_maestro">
               <field name="name">Tarjeta Maestro</field>
               <field name="type">receivable</field>
               <field name="code">1.131.13</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_diners">
+    <record model="account.data_account.template" id="ba_tarjeta_diners">
               <field name="name">Tarjeta Diners</field>
               <field name="type">receivable</field>
               <field name="code">1.131.14</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_nueva_card">
+    <record model="account.data_account.template" id="ba_tarjeta_nueva_card">
               <field name="name">Tarjeta Nueva Card</field>
               <field name="type">receivable</field>
               <field name="code">1.131.15</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_pymenacion">
+    <record model="account.data_account.template" id="ba_tarjeta_pymenacion">
               <field name="name">Tarjeta Pymenacion</field>
               <field name="type">receivable</field>
               <field name="code">1.131.16</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_american_express">
+    <record model="account.data_account.template" id="ba_tarjeta_american_express">
               <field name="name">Tarjeta American Express</field>
               <field name="type">receivable</field>
               <field name="code">1.131.17</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_baeplus">
+    <record model="account.data_account.template" id="ba_tarjeta_baeplus">
               <field name="name">Tarjeta baeplus</field>
               <field name="type">receivable</field>
               <field name="code">1.131.18</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_finrap">
+    <record model="account.data_account.template" id="ba_tarjeta_finrap">
               <field name="name">Tarjeta Finrap</field>
               <field name="type">receivable</field>
               <field name="code">1.131.19</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_confiable">
+    <record model="account.data_account.template" id="ba_tarjeta_confiable">
               <field name="name">Tarjeta Confiable</field>
               <field name="type">receivable</field>
               <field name="code">1.131.20</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_tarjeta_magenta">
+    <record model="account.data_account.template" id="ba_tarjeta_magenta">
               <field name="name">Tarjeta Magenta</field>
               <field name="type">receivable</field>
               <field name="code">1.131.21</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_deudores_por_ch_rechazados">
+    <record model="account.data_account.template" id="ba_deudores_por_ch_rechazados">
               <field name="name">Deudores por Ch. Rechazados</field>
               <field name="type">receivable</field>
               <field name="code">1.131.22</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_deudores_por_ventas"/>
     </record>
-    <record model="account.account.template" id="ba_otros_creditos">
+    <record model="account.data_account.template" id="ba_otros_creditos">
               <field name="name">Otros Creditos</field>
               <field name="type">view</field>
               <field name="code">1.132</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_activo"/>
     </record>
-    <record model="account.account.template" id="ba_anticipos_a_proveedores">
+    <record model="account.data_account.template" id="ba_anticipos_a_proveedores">
               <field name="name">Anticipos a proveedores</field>
               <field name="type">receivable</field>
               <field name="code">1.132.01</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_anticipos_al_personal">
+    <record model="account.data_account.template" id="ba_anticipos_al_personal">
               <field name="name">Anticipos al personal</field>
               <field name="type">receivable</field>
               <field name="code">1.132.02</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_iva_credito_fiscal">
+    <record model="account.data_account.template" id="ba_iva_credito_fiscal">
               <field name="name">IVA Credito fiscal</field>
               <field name="type">receivable</field>
               <field name="code">1.132.03</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_credito_gciaspor_impal_credito">
+    <record model="account.data_account.template" id="ba_credito_gciaspor_impal_credito">
               <field name="name">Credito Gcias.por Imp.al Credito</field>
               <field name="type">receivable</field>
               <field name="code">1.132.04</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_iva_dto814">
+    <record model="account.data_account.template" id="ba_iva_dto814">
               <field name="name">I.V.A. Dto.814</field>
               <field name="type">receivable</field>
               <field name="code">1.132.05</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_ret_y_percepciones_iva">
+    <record model="account.data_account.template" id="ba_ret_y_percepciones_iva">
               <field name="name">Ret. y Percepciones I.V.A.</field>
               <field name="type">receivable</field>
               <field name="code">1.132.06</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_ret_y_percepciones_ingbrutos">
+    <record model="account.data_account.template" id="ba_ret_y_percepciones_ingbrutos">
               <field name="name">Ret. y Percepciones Ing.Brutos</field>
               <field name="type">receivable</field>
               <field name="code">1.132.07</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_ret_y_percepciones_impgcias">
+    <record model="account.data_account.template" id="ba_ret_y_percepciones_impgcias">
               <field name="name">Ret. y Percepciones Imp.Gcias.</field>
               <field name="type">receivable</field>
               <field name="code">1.132.08</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_ret_y_percepciones_suss">
+    <record model="account.data_account.template" id="ba_ret_y_percepciones_suss">
               <field name="name">Ret. y Percepciones SUSS</field>
               <field name="type">receivable</field>
               <field name="code">1.132.09</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_nota_de_credito">
+    <record model="account.data_account.template" id="ba_nota_de_credito">
               <field name="name">Nota de Credito</field>
               <field name="type">receivable</field>
               <field name="code">1.132.10</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_anticipo_imp_a_las_ganancias">
+    <record model="account.data_account.template" id="ba_anticipo_imp_a_las_ganancias">
               <field name="name">Anticipo Imp. a las Ganancias</field>
               <field name="type">receivable</field>
               <field name="code">1.132.11</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_tarjetas_a_liquidar">
+    <record model="account.data_account.template" id="ba_tarjetas_a_liquidar">
               <field name="name">Tarjetas a Liquidar</field>
               <field name="type">receivable</field>
               <field name="code">1.132.12</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_saldo_a_favor_ibb">
+    <record model="account.data_account.template" id="ba_saldo_a_favor_ibb">
               <field name="name">Saldo a favor IBB</field>
               <field name="type">receivable</field>
               <field name="code">1.132.13</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_saldo_a_favor_iva">
+    <record model="account.data_account.template" id="ba_saldo_a_favor_iva">
               <field name="name">Saldo a Favor I.V.A.</field>
               <field name="type">receivable</field>
               <field name="code">1.132.14</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_otros_creditos"/>
     </record>
-    <record model="account.account.template" id="ba_cuentas_particulares">
+    <record model="account.data_account.template" id="ba_cuentas_particulares">
               <field name="name">Cuentas Particulares</field>
               <field name="type">view</field>
               <field name="code">1.133</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_activo"/>
     </record>
-    <record model="account.account.template" id="ba_torchia_ema">
+    <record model="account.data_account.template" id="ba_torchia_ema">
               <field name="name">Torchia Ema</field>
               <field name="type">receivable</field>
               <field name="code">1.133.01</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_cuentas_particulares"/>
     </record>
-    <record model="account.account.template" id="ba_kreplak_carlos">
+    <record model="account.data_account.template" id="ba_kreplak_carlos">
               <field name="name">Kreplak Carlos</field>
               <field name="type">receivable</field>
               <field name="code">1.133.02</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_cuentas_particulares"/>
     </record>
-    <record model="account.account.template" id="ba_kreplak_federico">
+    <record model="account.data_account.template" id="ba_kreplak_federico">
               <field name="name">Kreplak Federico</field>
               <field name="type">receivable</field>
               <field name="code">1.133.03</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_cuentas_particulares"/>
     </record>
-    <record model="account.account.template" id="ba_bienes_de_cambio">
+    <record model="account.data_account.template" id="ba_bienes_de_cambio">
               <field name="name">BIENES DE CAMBIO</field>
               <field name="type">view</field>
               <field name="code">1.140</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_activo"/>
     </record>
-    <record model="account.account.template" id="ba_mercadería">
+    <record model="account.data_account.template" id="ba_mercadería">
               <field name="name">Mercadería</field>
               <field name="type">receivable</field>
               <field name="code">1.141</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_bienes_de_cambio"/>
     </record>
-    <record model="account.account.template" id="ba_productos_de_blanco">
+    <record model="account.data_account.template" id="ba_productos_de_blanco">
               <field name="name">Productos de Blanco</field>
               <field name="type">receivable</field>
               <field name="code">1.141.01</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_bienes_de_cambio"/>
     </record>
-    <record model="account.account.template" id="ba_colchones_y_sommiers">
+    <record model="account.data_account.template" id="ba_colchones_y_sommiers">
               <field name="name">Colchones y Sommiers</field>
               <field name="type">receivable</field>
               <field name="code">1.141.02</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_bienes_de_cambio"/>
     </record>
-    <record model="account.account.template" id="ba_materiales">
+    <record model="account.data_account.template" id="ba_materiales">
               <field name="name">Materiales</field>
               <field name="type">receivable</field>
               <field name="code">1.141.03</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_bienes_de_cambio"/>
     </record>
-    <record model="account.account.template" id="ba_muebles">
+    <record model="account.data_account.template" id="ba_muebles">
               <field name="name">Muebles</field>
               <field name="type">receivable</field>
               <field name="code">1.141.04</field>
-              <field name="user_type" ref="account.account_type_receivable"/>
+              <field name="user_type" ref="account.data_account_type_receivable"/>
              <field name="parent_id" ref="ba_bienes_de_cambio"/>
     </record>
-    <record model="account.account.template" id="ba_bienes_de_uso">
+    <record model="account.data_account.template" id="ba_bienes_de_uso">
               <field name="name">BIENES DE USO</field>
               <field name="type">view</field>
               <field name="code">1.150</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_activo"/>
     </record>
-    <record model="account.account.template" id="ba_muebles_y_utiles">
+    <record model="account.data_account.template" id="ba_muebles_y_utiles">
               <field name="name">Muebles y Utiles</field>
               <field name="type">other</field>
               <field name="code">1.151</field>
-              <field name="user_type" ref="account.account_type_asset"/>
+              <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_maquinarias">
+    <record model="account.data_account.template" id="ba_maquinarias">
               <field name="name">Maquinarias</field>
               <field name="type">other</field>
               <field name="code">1.152</field>
-              <field name="user_type" ref="account.account_type_asset"/>
+              <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_rodados">
+    <record model="account.data_account.template" id="ba_rodados">
               <field name="name">Rodados</field>
               <field name="type">other</field>
               <field name="code">1.153</field>
-              <field name="user_type" ref="account.account_type_asset"/>
+              <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_equipos_de_computación">
+    <record model="account.data_account.template" id="ba_equipos_de_computación">
               <field name="name">Equipos de Computación</field>
               <field name="type">other</field>
               <field name="code">1.154</field>
-              <field name="user_type" ref="account.account_type_asset"/>
+              <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_inmuebles">
+    <record model="account.data_account.template" id="ba_inmuebles">
               <field name="name">Inmuebles</field>
               <field name="type">other</field>
               <field name="code">1.155</field>
-              <field name="user_type" ref="account.account_type_asset"/>
+              <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_amortiz_acmuebles_y_utiles">
+    <record model="account.data_account.template" id="ba_amortiz_acmuebles_y_utiles">
               <field name="name">Amortiz Ac.Muebles y Utiles</field>
               <field name="type">other</field>
               <field name="code">1.156</field>
-              <field name="user_type" ref="account.account_type_asset"/>
+              <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_amortiz_ac_maquinarias">
+    <record model="account.data_account.template" id="ba_amortiz_ac_maquinarias">
               <field name="name">Amortiz Ac Maquinarias</field>
               <field name="type">other</field>
               <field name="code">1.157</field>
-              <field name="user_type" ref="account.account_type_asset"/>
+              <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_amortiz_ac_rodados">
+    <record model="account.data_account.template" id="ba_amortiz_ac_rodados">
               <field name="name">Amortiz Ac Rodados</field>
               <field name="type">other</field>
               <field name="code">1.158</field>
-              <field name="user_type" ref="account.account_type_asset"/>
+              <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_amortiz_ac_equipos_de_computacion">
+    <record model="account.data_account.template" id="ba_amortiz_ac_equipos_de_computacion">
               <field name="name">Amortiz Ac Equipos de Computacion</field>
               <field name="type">other</field>
               <field name="code">1.159</field>
-              <field name="user_type" ref="account.account_type_asset"/>
+              <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_amortiz_ac_instalaciones">
+    <record model="account.data_account.template" id="ba_amortiz_ac_instalaciones">
               <field name="name">Amortiz Ac Instalaciones</field>
               <field name="type">other</field>
               <field name="code">1.160</field>
-              <field name="user_type" ref="account.account_type_asset"/>
+              <field name="user_type" ref="account.data_account_type_asset"/>
              <field name="parent_id" ref="ba_bienes_de_uso"/>
     </record>
-    <record model="account.account.template" id="ba_pasivo">
+    <record model="account.data_account.template" id="ba_pasivo">
               <field name="name">Pasivo</field>
               <field name="type">view</field>
               <field name="code">2</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_view"/>
              <field name="parent_id" ref="ba_a_root"/>
     </record>
-    <record model="account.account.template" id="ba_deudas">
+    <record model="account.data_account.template" id="ba_deudas">
               <field name="name">Deudas</field>
               <field name="type">payable</field>
               <field name="code">2.110</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_pasivo"/>
     </record>
-    <record model="account.account.template" id="ba_deudas_por_compras">
+    <record model="account.data_account.template" id="ba_deudas_por_compras">
               <field name="name">Deudas por Compras</field>
               <field name="type">view</field>
               <field name="code">2.111</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_pasivo"/>
     </record>
-    <record model="account.account.template" id="ba_proveedores">
+    <record model="account.data_account.template" id="ba_proveedores">
               <field name="name">Proveedores</field>
               <field name="type">payable</field>
               <field name="code">2.111.01</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_proveedores"/>
     </record>
-    <record model="account.account.template" id="ba_cheques_emitidos">
+    <record model="account.data_account.template" id="ba_cheques_emitidos">
               <field name="name">Cheques emitidos</field>
               <field name="type">payable</field>
               <field name="code">2.111.02</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_proveedores"/>
     </record>
-    <record model="account.account.template" id="ba_deudas_bancarias">
+    <record model="account.data_account.template" id="ba_deudas_bancarias">
               <field name="name">Deudas Bancarias</field>
               <field name="type">view</field>
               <field name="code">2.112</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_pasivo"/>
     </record>
-    <record model="account.account.template" id="ba_préstamos_bancarios">
+    <record model="account.data_account.template" id="ba_préstamos_bancarios">
               <field name="name">Préstamos bancarios</field>
               <field name="type">payable</field>
               <field name="code">2.112.01</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_deudas_bancarias"/>
     </record>
-    <record model="account.account.template" id="ba_cheques_propios_a_pagar">
+    <record model="account.data_account.template" id="ba_cheques_propios_a_pagar">
               <field name="name">Cheques propios a pagar</field>
               <field name="type">payable</field>
               <field name="code">2.112.02</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_deudas_bancarias"/>
     </record>
-    <record model="account.account.template" id="ba_otras_deudas">
+    <record model="account.data_account.template" id="ba_otras_deudas">
               <field name="name">Otras deudas</field>
               <field name="type">view</field>
               <field name="code">2.113</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_pasivo"/>
     </record>
-    <record model="account.account.template" id="ba_sueldos_y_jornales_a_pagar">
+    <record model="account.data_account.template" id="ba_sueldos_y_jornales_a_pagar">
               <field name="name">Sueldos y Jornales a pagar</field>
               <field name="type">other</field>
               <field name="code">2.113.01</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_cargas_sociales_a_pagar">
+    <record model="account.data_account.template" id="ba_cargas_sociales_a_pagar">
               <field name="name">Cargas Sociales a pagar</field>
               <field name="type">other</field>
               <field name="code">2.113.02</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_ingresos_brutos_a_pagar">
+    <record model="account.data_account.template" id="ba_ingresos_brutos_a_pagar">
               <field name="name">Ingresos Brutos a Pagar</field>
               <field name="type">other</field>
               <field name="code">2.113.03</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_anticipo_de_clientes">
+    <record model="account.data_account.template" id="ba_anticipo_de_clientes">
               <field name="name">Anticipo de clientes</field>
               <field name="type">other</field>
               <field name="code">2.113.04</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_iva">
+    <record model="account.data_account.template" id="ba_iva">
               <field name="name">IVA</field>
               <field name="type">other</field>
               <field name="code">2.113.05</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_sicore_retenciones_de_gcias">
+    <record model="account.data_account.template" id="ba_sicore_retenciones_de_gcias">
               <field name="name">SICORE Retenciones de gcias.</field>
               <field name="type">other</field>
               <field name="code">2.113.06</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_cuota_sindical_a_pagar">
+    <record model="account.data_account.template" id="ba_cuota_sindical_a_pagar">
               <field name="name">Cuota Sindical a pagar</field>
               <field name="type">other</field>
               <field name="code">2.113.07</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_faecys_a_pagar">
+    <record model="account.data_account.template" id="ba_faecys_a_pagar">
               <field name="name">Faecys a pagar</field>
               <field name="type">other</field>
               <field name="code">2.113.08</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_seguro_la_estrella">
+    <record model="account.data_account.template" id="ba_seguro_la_estrella">
               <field name="name">Seguro la Estrella</field>
               <field name="type">other</field>
               <field name="code">2.113.09</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_depositos_judiciales">
+    <record model="account.data_account.template" id="ba_depositos_judiciales">
               <field name="name">Depositos judiciales</field>
               <field name="type">other</field>
               <field name="code">2.113.10</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_art_a_pagar">
+    <record model="account.data_account.template" id="ba_art_a_pagar">
               <field name="name">ART a pagar</field>
               <field name="type">other</field>
               <field name="code">2.113.11</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_seguro_de_vida_dcto156774">
+    <record model="account.data_account.template" id="ba_seguro_de_vida_dcto156774">
               <field name="name">Seguro de Vida Dcto.1567/74</field>
               <field name="type">other</field>
               <field name="code">2.113.12</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_contribucion_inacap">
+    <record model="account.data_account.template" id="ba_contribucion_inacap">
               <field name="name">Contribucion INACAP</field>
               <field name="type">other</field>
               <field name="code">2.113.13</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_iva_a_pagar">
+    <record model="account.data_account.template" id="ba_iva_a_pagar">
               <field name="name">I.V.A. a pagar</field>
               <field name="type">other</field>
               <field name="code">2.113.14</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_obra_social_prepaga_(smedical)">
+    <record model="account.data_account.template" id="ba_obra_social_prepaga_(smedical)">
               <field name="name">Obra Social Prepaga (S.Medical)</field>
               <field name="type">other</field>
               <field name="code">2.113.15</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_otras_deudas"/>
     </record>
-    <record model="account.account.template" id="ba_previsiones">
+    <record model="account.data_account.template" id="ba_previsiones">
               <field name="name">Previsiones</field>
               <field name="type">payable</field>
               <field name="code">2.220</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_pasivo"/>
     </record>
-    <record model="account.account.template" id="ba_previsión_para_indemniz_p_despidos">
+    <record model="account.data_account.template" id="ba_previsión_para_indemniz_p_despidos">
               <field name="name">Previsión para indemniz p despidos</field>
               <field name="type">payable</field>
               <field name="code">2.221</field>
-              <field name="user_type" ref="account.account_type_payable"/>
+              <field name="user_type" ref="account.data_account_type_payable"/>
              <field name="parent_id" ref="ba_pasivo"/>
     </record>
-    <record model="account.account.template" id="ba_patrimonio_neto">
+    <record model="account.data_account.template" id="ba_patrimonio_neto">
               <field name="name">Patrimonio Neto</field>
               <field name="type">view</field>
               <field name="code">3</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_a_root"/>
     </record>
-    <record model="account.account.template" id="ba_capital">
+    <record model="account.data_account.template" id="ba_capital">
               <field name="name">CAPITAL</field>
               <field name="type">other</field>
               <field name="code">3.100</field>
-              <field name="user_type" ref="account.account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash_equity"/>
              <field name="parent_id" ref="ba_patrimonio_neto"/>
     </record>
-    <record model="account.account.template" id="ba_reservas">
+    <record model="account.data_account.template" id="ba_reservas">
               <field name="name">RESERVAS</field>
               <field name="type">other</field>
               <field name="code">3.200</field>
-              <field name="user_type" ref="account.account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash_equity"/>
              <field name="parent_id" ref="ba_patrimonio_neto"/>
     </record>
-    <record model="account.account.template" id="ba_reserva_legal">
+    <record model="account.data_account.template" id="ba_reserva_legal">
               <field name="name">Reserva Legal</field>
               <field name="type">other</field>
               <field name="code">3.210</field>
-              <field name="user_type" ref="account.account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash_equity"/>
              <field name="parent_id" ref="ba_reservas"/>
     </record>
-    <record model="account.account.template" id="ba_resultados">
+    <record model="account.data_account.template" id="ba_resultados">
               <field name="name">RESULTADOS</field>
               <field name="type">other</field>
               <field name="code">3.300</field>
-              <field name="user_type" ref="account.account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash_equity"/>
              <field name="parent_id" ref="ba_patrimonio_neto"/>
     </record>
-    <record model="account.account.template" id="ba_resultados_acumulados">
+    <record model="account.data_account.template" id="ba_resultados_acumulados">
               <field name="name">Resultados acumulados</field>
               <field name="type">other</field>
               <field name="code">3.310</field>
-              <field name="user_type" ref="account.account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash_equity"/>
              <field name="parent_id" ref="ba_resultados"/>
     </record>
-    <record model="account.account.template" id="ba_resultados_del_ejercicio">
+    <record model="account.data_account.template" id="ba_resultados_del_ejercicio">
               <field name="name">Resultados del ejercicio</field>
               <field name="type">other</field>
               <field name="code">3.320</field>
-              <field name="user_type" ref="account.account_type_cash_equity"/>
+              <field name="user_type" ref="account.data_account_type_cash_equity"/>
              <field name="parent_id" ref="ba_patrimonio_neto"/>
     </record>
-    <record model="account.account.template" id="ba_ingresos">
+    <record model="account.data_account.template" id="ba_ingresos">
               <field name="name">Ingresos</field>
               <field name="type">view</field>
               <field name="code">4</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_a_root"/>
     </record>
-    <record model="account.account.template" id="ba_ventas_de_mercadería">
+    <record model="account.data_account.template" id="ba_ventas_de_mercadería">
               <field name="name">Ventas de mercadería</field>
               <field name="type">other</field>
               <field name="code">4.101</field>
-              <field name="user_type" ref="account.account_type_income"/>
+              <field name="user_type" ref="account.data_account_type_income"/>
              <field name="parent_id" ref="ba_ingresos"/>
     </record>
-    <record model="account.account.template" id="ba_descuentos_obtenidos">
+    <record model="account.data_account.template" id="ba_descuentos_obtenidos">
               <field name="name">Descuentos Obtenidos</field>
               <field name="type">other</field>
               <field name="code">4.110</field>
-              <field name="user_type" ref="account.account_type_income"/>
+              <field name="user_type" ref="account.data_account_type_income"/>
              <field name="parent_id" ref="ba_ingresos"/>
     </record>
-    <record model="account.account.template" id="ba_intereses_ganados">
+    <record model="account.data_account.template" id="ba_intereses_ganados">
               <field name="name">Intereses ganados</field>
               <field name="type">other</field>
               <field name="code">4.111</field>
-              <field name="user_type" ref="account.account_type_income"/>
+              <field name="user_type" ref="account.data_account_type_income"/>
              <field name="parent_id" ref="ba_ingresos"/>
     </record>
-    <record model="account.account.template" id="ba_comisiones_obtenidas">
+    <record model="account.data_account.template" id="ba_comisiones_obtenidas">
               <field name="name">Comisiones obtenidas</field>
               <field name="type">other</field>
               <field name="code">4.112</field>
-              <field name="user_type" ref="account.account_type_income"/>
+              <field name="user_type" ref="account.data_account_type_income"/>
              <field name="parent_id" ref="ba_ingresos"/>
     </record>
-    <record model="account.account.template" id="ba_redondeo">
+    <record model="account.data_account.template" id="ba_redondeo">
               <field name="name">Redondeo+</field>
               <field name="type">other</field>
               <field name="code">4.113</field>
-              <field name="user_type" ref="account.account_type_income"/>
+              <field name="user_type" ref="account.data_account_type_income"/>
              <field name="parent_id" ref="ba_ingresos"/>
     </record>
-    <record model="account.account.template" id="ba_cobranzas">
+    <record model="account.data_account.template" id="ba_cobranzas">
               <field name="name">cobranzas</field>
               <field name="type">other</field>
               <field name="code">4.114</field>
-              <field name="user_type" ref="account.account_type_income"/>
+              <field name="user_type" ref="account.data_account_type_income"/>
              <field name="parent_id" ref="ba_ingresos"/>
     </record>
-    <record model="account.account.template" id="ba_recupero_de_gastos">
+    <record model="account.data_account.template" id="ba_recupero_de_gastos">
               <field name="name">recupero de gastos</field>
               <field name="type">other</field>
               <field name="code">4.115</field>
-              <field name="user_type" ref="account.account_type_income"/>
+              <field name="user_type" ref="account.data_account_type_income"/>
              <field name="parent_id" ref="ba_ingresos"/>
     </record>
-    <record model="account.account.template" id="ba_egresos">
+    <record model="account.data_account.template" id="ba_egresos">
               <field name="name">Egresos</field>
               <field name="type">view</field>
               <field name="code">5</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_a_root"/>
     </record>
-    <record model="account.account.template" id="ba_costo_de_mercadería">
+    <record model="account.data_account.template" id="ba_costo_de_mercadería">
               <field name="name">Costo de mercadería</field>
               <field name="type">view</field>
               <field name="code">5.110</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_egresos"/>
     </record>
-    <record model="account.account.template" id="ba_costo_de_mercadería_vendida">
+    <record model="account.data_account.template" id="ba_costo_de_mercadería_vendida">
               <field name="name">Costo de mercadería vendida</field>
               <field name="type">other</field>
               <field name="code">5.110.01</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_costo_de_mercadería"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_comerciales">
+    <record model="account.data_account.template" id="ba_gastos_comerciales">
               <field name="name">Gastos Comerciales</field>
               <field name="type">view</field>
               <field name="code">5.130</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_egresos"/>
     </record>
-    <record model="account.account.template" id="ba_comisiones_sobre_ventas">
+    <record model="account.data_account.template" id="ba_comisiones_sobre_ventas">
               <field name="name">Comisiones sobre ventas</field>
               <field name="type">other</field>
               <field name="code">5.130.01</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_publicidad_y_propaganda">
+    <record model="account.data_account.template" id="ba_publicidad_y_propaganda">
               <field name="name">Publicidad y propaganda</field>
               <field name="type">other</field>
               <field name="code">5.130.02</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_de_viajes">
+    <record model="account.data_account.template" id="ba_gastos_de_viajes">
               <field name="name">Gastos de Viajes</field>
               <field name="type">other</field>
               <field name="code">5.130.03</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_prestauración_muebles">
+    <record model="account.data_account.template" id="ba_gastos_prestauración_muebles">
               <field name="name">Gastos p/restauración Muebles</field>
               <field name="type">other</field>
               <field name="code">5.130.04</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_fletes">
+    <record model="account.data_account.template" id="ba_fletes">
               <field name="name">Fletes</field>
               <field name="type">other</field>
               <field name="code">5.130.05</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_manten_y_rep_de_herramientas">
+    <record model="account.data_account.template" id="ba_manten_y_rep_de_herramientas">
               <field name="name">Manten. y rep. de herramientas</field>
               <field name="type">other</field>
               <field name="code">5.130.06</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_insumos">
+    <record model="account.data_account.template" id="ba_insumos">
               <field name="name">Insumos</field>
               <field name="type">other</field>
               <field name="code">5.130.07</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_descuentos_otorgados">
+    <record model="account.data_account.template" id="ba_descuentos_otorgados">
               <field name="name">Descuentos otorgados</field>
               <field name="type">other</field>
               <field name="code">5.130.08</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_agasajos">
+    <record model="account.data_account.template" id="ba_agasajos">
               <field name="name">Agasajos</field>
               <field name="type">other</field>
               <field name="code">5.130.09</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_servicio_de_costura">
+    <record model="account.data_account.template" id="ba_servicio_de_costura">
               <field name="name">Servicio de Costura</field>
               <field name="type">other</field>
               <field name="code">5.130.10</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_comerciales"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_de_administracion">
+    <record model="account.data_account.template" id="ba_gastos_de_administracion">
               <field name="name">Gastos de Administración</field>
               <field name="type">view</field>
               <field name="code">5.140</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_egresos"/>
     </record>
-    <record model="account.account.template" id="ba_sueldos_y_jornales">
+    <record model="account.data_account.template" id="ba_sueldos_y_jornales">
               <field name="name">Sueldos y jornales</field>
               <field name="type">other</field>
               <field name="code">5.140.01</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_aguinaldos">
+    <record model="account.data_account.template" id="ba_aguinaldos">
               <field name="name">Aguinaldos</field>
               <field name="type">other</field>
               <field name="code">5.140.02</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_cargas_sociales">
+    <record model="account.data_account.template" id="ba_cargas_sociales">
               <field name="name">Cargas sociales</field>
               <field name="type">other</field>
               <field name="code">5.140.03</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_indemniz_por_despido">
+    <record model="account.data_account.template" id="ba_indemniz_por_despido">
               <field name="name">Indemniz. Por despido</field>
               <field name="type">other</field>
               <field name="code">5.140.04</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_honorarios_profesionales">
+    <record model="account.data_account.template" id="ba_honorarios_profesionales">
               <field name="name">Honorarios profesionales</field>
               <field name="type">other</field>
               <field name="code">5.140.05</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_agua">
+    <record model="account.data_account.template" id="ba_agua">
               <field name="name">Agua</field>
               <field name="type">other</field>
               <field name="code">5.140.06</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_telefono">
+    <record model="account.data_account.template" id="ba_telefono">
               <field name="name">Telefono</field>
               <field name="type">other</field>
               <field name="code">5.140.07</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_impuestos_y_tasas_municipales">
+    <record model="account.data_account.template" id="ba_impuestos_y_tasas_municipales">
               <field name="name">Impuestos y tasas municipales</field>
               <field name="type">other</field>
               <field name="code">5.140.08</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_alquileres">
+    <record model="account.data_account.template" id="ba_alquileres">
               <field name="name">Alquileres</field>
               <field name="type">other</field>
               <field name="code">5.140.09</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_mantenimiento_de_vehiculos">
+    <record model="account.data_account.template" id="ba_mantenimiento_de_vehiculos">
               <field name="name">Mantenimiento de. Vehiculos</field>
               <field name="type">other</field>
               <field name="code">5.140.10</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_mantenimientomuebles_y_utiles">
+    <record model="account.data_account.template" id="ba_mantenimientomuebles_y_utiles">
               <field name="name">MantenimientoMuebles y Utiles</field>
               <field name="type">other</field>
               <field name="code">5.140.11</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_mantenimiento_de_inmuebles">
+    <record model="account.data_account.template" id="ba_mantenimiento_de_inmuebles">
               <field name="name">Mantenimiento de Inmuebles</field>
               <field name="type">other</field>
               <field name="code">5.140.12</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_de_seguridad">
+    <record model="account.data_account.template" id="ba_gastos_de_seguridad">
               <field name="name">Gastos de Seguridad</field>
               <field name="type">other</field>
               <field name="code">5.140.13</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_ropa_de_trabajo">
+    <record model="account.data_account.template" id="ba_ropa_de_trabajo">
               <field name="name">Ropa de Trabajo</field>
               <field name="type">other</field>
               <field name="code">5.140.15</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_seguros">
+    <record model="account.data_account.template" id="ba_seguros">
               <field name="name">Seguros</field>
               <field name="type">other</field>
               <field name="code">5.140.16</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_combustibles_y_lubricantes">
+    <record model="account.data_account.template" id="ba_combustibles_y_lubricantes">
               <field name="name">Combustibles y lubricantes</field>
               <field name="type">other</field>
               <field name="code">5.140.17</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_papeleria_y_util_oficina">
+    <record model="account.data_account.template" id="ba_papeleria_y_util_oficina">
               <field name="name">Papeleria y Util. Oficina</field>
               <field name="type">other</field>
               <field name="code">5.140.18</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_servicios_de_computacion">
+    <record model="account.data_account.template" id="ba_servicios_de_computacion">
               <field name="name">Servicios de Computacion</field>
               <field name="type">other</field>
               <field name="code">5.140.19</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_varios">
+    <record model="account.data_account.template" id="ba_gastos_varios">
               <field name="name">Gastos Varios</field>
               <field name="type">other</field>
               <field name="code">5.140.20</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_redondeo">
+    <record model="account.data_account.template" id="ba_redondeo">
               <field name="name">Redondeo</field>
               <field name="type">other</field>
               <field name="code">5.140.21</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_telegrfranqueos">
+    <record model="account.data_account.template" id="ba_telegrfranqueos">
               <field name="name">Telegr.franqueos</field>
               <field name="type">other</field>
               <field name="code">5.140.22</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_de_administracion"/>
     </record>
-    <record model="account.account.template" id="ba_art">
+    <record model="account.data_account.template" id="ba_art">
               <field name="name">Art.</field>
               <field name="type">other</field>
               <field name="code">5.140.23</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref=" Bazar"/>
     </record>
-    <record model="account.account.template" id="ba_bsde_uso_menores">
+    <record model="account.data_account.template" id="ba_bsde_uso_menores">
               <field name="name">Bs.de Uso menores</field>
               <field name="type">other</field>
               <field name="code">5.140.24</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_servicio_de_internet">
+    <record model="account.data_account.template" id="ba_servicio_de_internet">
               <field name="name">Servicio de Internet</field>
               <field name="type">other</field>
               <field name="code">5.140.25</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_de_movilidad">
+    <record model="account.data_account.template" id="ba_gastos_de_movilidad">
               <field name="name">Gastos de Movilidad</field>
               <field name="type">other</field>
               <field name="code">5.140.26</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_articulos_de_farmacia">
+    <record model="account.data_account.template" id="ba_articulos_de_farmacia">
               <field name="name">Articulos de Farmacia</field>
               <field name="type">other</field>
               <field name="code">5.140.27</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_mantenimiento_de_vehiculos">
+    <record model="account.data_account.template" id="ba_mantenimiento_de_vehiculos">
               <field name="name">Mantenimiento de Vehiculos</field>
               <field name="type">other</field>
               <field name="code">5.140.28</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_medicina_laboral">
+    <record model="account.data_account.template" id="ba_medicina_laboral">
               <field name="name">Medicina Laboral</field>
               <field name="type">other</field>
               <field name="code">5.140.29</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_materiales_de_construccion">
+    <record model="account.data_account.template" id="ba_materiales_de_construccion">
               <field name="name">Materiales de Construccion</field>
               <field name="type">other</field>
               <field name="code">5.140.30</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_articulos_de_bazar">
+    <record model="account.data_account.template" id="ba_articulos_de_bazar">
               <field name="name">Articulos de Bazar</field>
               <field name="type">other</field>
               <field name="code">5.140.31</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_capacitaciones">
+    <record model="account.data_account.template" id="ba_capacitaciones">
               <field name="name">Capacitaciones</field>
               <field name="type">other</field>
               <field name="code">5.140.32</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_refrigerio">
+    <record model="account.data_account.template" id="ba_refrigerio">
               <field name="name">Refrigerio</field>
               <field name="type">other</field>
               <field name="code">5.140.55</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_tasas_x_serv_comunales">
+    <record model="account.data_account.template" id="ba_tasas_x_serv_comunales">
               <field name="name">Tasas x Serv. Comunales</field>
               <field name="type">other</field>
               <field name="code">5.140.56</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_tasas_de_comercio">
+    <record model="account.data_account.template" id="ba_tasas_de_comercio">
               <field name="name">Tasas de Comercio</field>
               <field name="type">other</field>
               <field name="code">5.140.57</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_tasa_contributiva">
+    <record model="account.data_account.template" id="ba_tasa_contributiva">
               <field name="name">Tasa Contributiva</field>
               <field name="type">other</field>
               <field name="code">5.140.58</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_instalaciones">
+    <record model="account.data_account.template" id="ba_instalaciones">
               <field name="name">Instalaciones</field>
               <field name="type">other</field>
               <field name="code">5.140.59</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_posnet">
+    <record model="account.data_account.template" id="ba_posnet">
               <field name="name">Posnet</field>
               <field name="type">other</field>
               <field name="code">5.140.60</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_de_rubrica">
+    <record model="account.data_account.template" id="ba_gastos_de_rubrica">
               <field name="name">Gastos de Rubrica</field>
               <field name="type">other</field>
               <field name="code">5.140.61</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_art_y_seg_de_vida">
+    <record model="account.data_account.template" id="ba_art_y_seg_de_vida">
               <field name="name">ART y Seg. de Vida</field>
               <field name="type">other</field>
               <field name="code">5.140.62</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_la_estrella_seguro_de_retiro">
+    <record model="account.data_account.template" id="ba_la_estrella_seguro_de_retiro">
               <field name="name">La Estrella Seguro de Retiro</field>
               <field name="type">other</field>
               <field name="code">5.140.63</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_inacap">
+    <record model="account.data_account.template" id="ba_inacap">
               <field name="name">INACAP</field>
               <field name="type">other</field>
               <field name="code">5.140.64</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_obra_social_prepaga">
+    <record model="account.data_account.template" id="ba_obra_social_prepaga">
               <field name="name">Obra Social Prepaga</field>
               <field name="type">other</field>
               <field name="code">5.140.65</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_imp_ibb_902">
+    <record model="account.data_account.template" id="ba_imp_ibb_902">
               <field name="name">Imp IBB 902</field>
               <field name="type">other</field>
               <field name="code">5.140.66</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_imp_ibb_915_neuquen">
+    <record model="account.data_account.template" id="ba_imp_ibb_915_neuquen">
               <field name="name">Imp IBB 915 Neuquen</field>
               <field name="type">other</field>
               <field name="code">5.140.67</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_imp_ibb_916_rio_negro">
+    <record model="account.data_account.template" id="ba_imp_ibb_916_rio_negro">
               <field name="name">Imp IBB 916 Rio Negro</field>
               <field name="type">other</field>
               <field name="code">5.140.68</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_art"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_financieros">
+    <record model="account.data_account.template" id="ba_gastos_financieros">
               <field name="name">Gastos financieros</field>
               <field name="type">view</field>
               <field name="code">5.150</field>
-              <field name="user_type" ref="account.account_type_root"/>
+              <field name="user_type" ref="account.data_account_type_root"/>
              <field name="parent_id" ref="ba_egresos"/>
     </record>
-    <record model="account.account.template" id="ba_intereses_pagados">
+    <record model="account.data_account.template" id="ba_intereses_pagados">
               <field name="name">Intereses pagados</field>
               <field name="type">other</field>
               <field name="code">5.150.01</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_financieros"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_bancarios">
+    <record model="account.data_account.template" id="ba_gastos_bancarios">
               <field name="name">Gastos bancarios</field>
               <field name="type">other</field>
               <field name="code">5.150.02</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_financieros"/>
     </record>
-    <record model="account.account.template" id="ba_donaciones">
+    <record model="account.data_account.template" id="ba_donaciones">
               <field name="name">Donaciones</field>
               <field name="type">other</field>
               <field name="code">5.150.03</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_financieros"/>
     </record>
-    <record model="account.account.template" id="ba_aranceles_tarjetas_de_credito">
+    <record model="account.data_account.template" id="ba_aranceles_tarjetas_de_credito">
               <field name="name">Aranceles tarjetas de Credito</field>
               <field name="type">other</field>
               <field name="code">5.150.04</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_financieros"/>
     </record>
-    <record model="account.account.template" id="ba_financiacion_tarjetas_de_credito">
+    <record model="account.data_account.template" id="ba_financiacion_tarjetas_de_credito">
               <field name="name">Financiacion tarjetas de Credito</field>
               <field name="type">other</field>
               <field name="code">5.150.05</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_financieros"/>
     </record>
-    <record model="account.account.template" id="ba_finrap">
+    <record model="account.data_account.template" id="ba_finrap">
               <field name="name">Finrap</field>
               <field name="type">other</field>
               <field name="code">5.150.06</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_financieros"/>
     </record>
-    <record model="account.account.template" id="ba_cheques_rechazados">
+    <record model="account.data_account.template" id="ba_cheques_rechazados">
               <field name="name">Cheques rechazados</field>
               <field name="type">other</field>
               <field name="code">5.150.07</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_financieros"/>
     </record>
-    <record model="account.account.template" id="ba_dtos_x_vtas_de_campaña">
+    <record model="account.data_account.template" id="ba_dtos_x_vtas_de_campaña">
               <field name="name">Dtos x Vtas de Campaña</field>
               <field name="type">other</field>
               <field name="code">5.150.08</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_gastos_financieros"/>
     </record>
-    <record model="account.account.template" id="ba_gastos_de_mantenimiento">
+    <record model="account.data_account.template" id="ba_gastos_de_mantenimiento">
               <field name="name">Gastos de Mantenimiento</field>
               <field name="type">other</field>
               <field name="code">5.151</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_egresos"/>
     </record>
-    <record model="account.account.template" id="ba_retiros_particulares">
+    <record model="account.data_account.template" id="ba_retiros_particulares">
               <field name="name">Retiros Particulares</field>
               <field name="type">other</field>
               <field name="code">5.152</field>
-              <field name="user_type" ref="account.account_type_expense"/>
+              <field name="user_type" ref="account.data_account_type_expense"/>
              <field name="parent_id" ref="ba_egresos"/>
     </record>
-           <record model="account.account.template" id="ba_impuestos_iibb_cm">
+           <record model="account.data_account.template" id="ba_impuestos_iibb_cm">
             <field name="type">other</field>
             <field name="code">5.153</field>
-            <field name="user_type" ref="account.account_type_expense"/>
+            <field name="user_type" ref="account.data_account_type_expense"/>
             <field name="name">Impuestos ingresos brutos Convenio multilateral</field>
             <field name="parent_id" ref="ba_egresos"/>
         </record>
